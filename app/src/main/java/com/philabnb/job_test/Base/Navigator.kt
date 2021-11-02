@@ -2,8 +2,10 @@ package com.philabnb.job_test.Base
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.philabnb.job_test.DataPageFragment
 import com.philabnb.job_test.HomeFragment
 import com.philabnb.job_test.R
+import com.philabnb.job_test.WebPageFragment
 import org.koin.ext.getFullName
 
 class Navigator {
@@ -13,6 +15,13 @@ class Navigator {
 
 fun Navigator.toHome(){
     addPage(HomeFragment.newInstance())
+}
+fun Navigator.toDataPage(){
+    addPage(DataPageFragment.newInstance())
+}
+
+fun Navigator.toWebViewPage(){
+    addPage(WebPageFragment.newInstance())
 }
 fun Navigator.addPage(fragment: Fragment){
     //unknow

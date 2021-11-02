@@ -1,16 +1,16 @@
 package com.philabnb.job_test
 
+import com.philabnb.job_test.Base.Navigator
+import com.philabnb.job_test.Base.toDataPage
+import com.philabnb.job_test.Base.toWebViewPage
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel {
         MainViewModel(
-//            get<Navigator>()::toPage1,
-//            get<Navigator>()::toPage2,
-//            get<Navigator>()::toPage3,
-//            get<Navigator>()::toPage4,
-//            get<Navigator>()::toPage5
+            get<Navigator>()::toDataPage,
+            get<Navigator>()::toWebViewPage,
         )
     }
 }

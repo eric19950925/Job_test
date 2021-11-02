@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Job_test/app/src/main/res/layout/activity_main.xml" value="0.21041666666666667" />
+        <entry key="..\:/Job_test/app/src/main/res/layout/fragment_datapage.xml" value="0.34322916666666664" />
         <entry key="..\:/Job_test/app/src/main/res/layout/fragment_home.xml" value="0.22708333333333333" />
+        <entry key="..\:/Job_test/app/src/main/res/layout/fragment_web.xml" value="0.23072916666666668" />
+        <entry key="..\:/Job_test/app/src/main/res/layout/rv_data_item.xml" value="0.34322916666666664" />
         <entry key="..\:/Job_test/app/src/main/res/xml/network_security_config.xml" value="0.22708333333333333" />
       </map>
     </option>

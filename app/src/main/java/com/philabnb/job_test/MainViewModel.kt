@@ -1,20 +1,24 @@
 package com.philabnb.job_test
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.philabnb.job_test.Model.DataModelItem
 import okhttp3.*
 import java.io.IOException
 
 class MainViewModel(
-//    private var toPage1:()->Unit,
-//    private var toPage2:()->Unit,
-//    private var toPage3:()->Unit,
-//    private var toPage4:()->Unit,
-//    private var toPage5:()->Unit
+    private var toDataPage:()->Unit,
+    private var toWebViewPage:()->Unit,
 ): ViewModel() {
-//    fun toP1(){
-//        toPage1()
-//    }
+    val dataList = MutableLiveData<List<DataModelItem>>()
+    val apodSite = MutableLiveData<String>()
+
+
+    fun toWebViewPage(){
+        toWebViewPage.invoke()
+    }
+
     fun sent_request(){
     val client = OkHttpClient()
     var body = FormBody.Builder()
@@ -32,7 +36,11 @@ class MainViewModel(
         }
 
         override fun onResponse(call: Call, response: Response) {
-            Log.d("TAG",response.body?.string()?:"")
+//            Log.d("TAG",response.body?.string()?:"")
+            val rsp = response.body?.string()?:""
+            if(rsp.equals("Success!!")){
+                toDataPage.invoke()
+            }
         }
     })
     }
