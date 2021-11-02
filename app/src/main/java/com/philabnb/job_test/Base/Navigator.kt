@@ -2,12 +2,17 @@ package com.philabnb.job_test.Base
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.philabnb.job_test.HomeFragment
 import com.philabnb.job_test.R
 import org.koin.ext.getFullName
 
 class Navigator {
     lateinit var activity: FragmentActivity
     var lastAddTime: Long = 0
+}
+
+fun Navigator.toHome(){
+    addPage(HomeFragment.newInstance())
 }
 fun Navigator.addPage(fragment: Fragment){
     //unknow
