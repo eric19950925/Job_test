@@ -4,7 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.OrientationHelper
 import com.philabnb.job_test.Base.BaseFragment
 import com.philabnb.job_test.Model.DataModelItem
 import kotlinx.android.synthetic.main.fragment_datapage.*
@@ -45,7 +47,7 @@ class DataPageFragment : BaseFragment(){
 
         myAdapter = DataAdapter(emptyList<DataModelItem>().toMutableList()){}
         rv_data.layoutManager = LinearLayoutManager(context)
-//        rv_data.addItemDecoration(DividerItemDecoration(context,OrientationHelper.VERTICAL))
+        rv_data.addItemDecoration(DividerItemDecoration(context, OrientationHelper.VERTICAL))
         rv_data.adapter = myAdapter
     }
 
