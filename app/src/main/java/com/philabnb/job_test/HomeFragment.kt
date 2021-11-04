@@ -7,11 +7,11 @@ import androidx.fragment.app.Fragment
 import com.jakewharton.rxbinding3.view.clicks
 import com.philabnb.job_test.Base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 import java.util.concurrent.TimeUnit
 
 class HomeFragment : BaseFragment(){
-    private val viewModel by viewModel<MainViewModel>()
+    private val viewModel by sharedViewModel<MainViewModel>()
     override fun getLayoutRes(): Int = R.layout.fragment_home
 
     override fun initData() {
@@ -26,8 +26,12 @@ class HomeFragment : BaseFragment(){
     override fun initView() {
         btn_request.listenClick {
             viewModel.sent_request()
-
         }
+
+        btn_cathaybk.listenClick {
+            viewModel.toCathaybk()
+        }
+
     }
     companion object {
         fun newInstance() = HomeFragment()

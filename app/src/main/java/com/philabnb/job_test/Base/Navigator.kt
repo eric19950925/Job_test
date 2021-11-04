@@ -2,10 +2,7 @@ package com.philabnb.job_test.Base
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.philabnb.job_test.DataPageFragment
-import com.philabnb.job_test.HomeFragment
-import com.philabnb.job_test.R
-import com.philabnb.job_test.WebPageFragment
+import com.philabnb.job_test.*
 import org.koin.ext.getFullName
 
 class Navigator {
@@ -22,6 +19,10 @@ fun Navigator.toDataPage(){
 
 fun Navigator.toWebViewPage(){
     addPage(WebPageFragment.newInstance())
+}
+
+fun Navigator.toCathaybkPage(){
+    addPage(Cathaybk.newInstance())
 }
 fun Navigator.addPage(fragment: Fragment){
     //unknow
@@ -77,19 +78,6 @@ fun Navigator.addPage(fragment: Fragment){
 
 }
 fun Navigator.onBackPress() {
-    synchronized(activity.supportFragmentManager) {
-        val fragmentManager = activity.supportFragmentManager
-
-        if (fragmentManager.backStackEntryCount == 1) {
-            for (fragment in fragmentManager.fragments) {
-//                if (fragment is EntrancePage
-//                ) {
-//                    activity.finish()
-//                    break
-//                }
-            }
-        } else {
-            fragmentManager.popBackStack()
-        }
-    }
+    val fragmentManager = activity.supportFragmentManager
+    fragmentManager.popBackStack()
 }

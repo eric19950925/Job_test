@@ -1,6 +1,7 @@
 package com.philabnb.job_test
 
 import com.philabnb.job_test.Base.Navigator
+import com.philabnb.job_test.Base.toCathaybkPage
 import com.philabnb.job_test.Base.toDataPage
 import com.philabnb.job_test.Base.toWebViewPage
 import org.koin.android.viewmodel.dsl.viewModel
@@ -11,6 +12,7 @@ val viewModelModule = module {
         MainViewModel(
             get<Navigator>()::toDataPage,
             get<Navigator>()::toWebViewPage,
+            get<Navigator>()::toCathaybkPage,
         )
     }
 }

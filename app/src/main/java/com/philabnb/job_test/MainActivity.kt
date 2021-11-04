@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
 import com.philabnb.job_test.Base.BaseFragment
 import com.philabnb.job_test.Base.Navigator
 import com.philabnb.job_test.Base.toHome
